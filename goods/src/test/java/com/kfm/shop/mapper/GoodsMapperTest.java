@@ -32,9 +32,11 @@ class GoodsMapperTest {
        @Test
      public void insert() {
            Goods goods = new Goods();
-           goods.setName("苹果");
+           goods.setName("桔子");
+           goods.setPrice(790L);
+           goods.setNum(200);
           int insert = goodsMapper.insert(goods);
-           Assert.notNull(goods, "goods is null");
+           assertEquals(1,insert);
        }
        @Test
       public void update() {

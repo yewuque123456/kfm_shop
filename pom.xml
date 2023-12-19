@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>goods</module>
+        <module>system</module>
     </modules>
 
     <properties>
@@ -31,11 +32,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
+        <!--  简写get和set方法-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
 
