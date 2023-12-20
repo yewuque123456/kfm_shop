@@ -12,10 +12,10 @@ spring:
 # mybatis-plus 配置
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.kfm.shop.model
+  type-aliases-package: com.kfm.shop.system.model
   configuration:
     map-underscore-to-camel-case: true
 
 logging:
   level:
-    com.kfm.shop: debug
+    com.kfm.shop.system: debug

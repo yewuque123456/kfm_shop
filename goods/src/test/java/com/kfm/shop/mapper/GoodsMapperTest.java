@@ -1,7 +1,8 @@
 package com.kfm.shop.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.kfm.shop.model.Goods;
+import com.kfm.shop.goods.mapper.GoodsMapper;
+import com.kfm.shop.goods.model.Goods;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

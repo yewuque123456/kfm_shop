@@ -1,6 +1,7 @@
 package com.kfm.shop.service;
 
-import com.kfm.shop.model.Goods;
+import com.kfm.shop.goods.model.Goods;
+import com.kfm.shop.goods.service.GoodsService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
