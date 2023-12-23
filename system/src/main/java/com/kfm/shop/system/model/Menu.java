@@ -1,11 +1,11 @@
 package com.kfm.shop.system.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.kfm.shop.comm.model.BaseModel;
 import lombok.Data;
-import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -15,7 +15,6 @@ import java.io.Serializable;
  */
 @TableName(value ="sys_menu")
 @Data
-@ToString(callSuper = true)
 public class Menu extends BaseModel implements Serializable {
     /**
      * 菜单id
@@ -47,6 +46,14 @@ public class Menu extends BaseModel implements Serializable {
      * 类型 1:菜单 2:按钮
      */
     private Integer type;
+
+    /**
+     * 子菜单
+     */
+    private Integer orderNum;
+
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
 
 
 }

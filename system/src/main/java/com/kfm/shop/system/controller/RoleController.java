@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageHelper;
 import com.kfm.shop.comm.util.Result;
 import com.kfm.shop.system.model.Role;
+import com.kfm.shop.system.model.dto.RoleGrantMenuDTO;
 import com.kfm.shop.system.service.RoleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -65,6 +66,12 @@ public class RoleController {
     @ApiOperation(value = "根据id删除角色信息", notes = "根据id删除角色信息")
     public Result deleteGoodsById(@ApiParam(name = "id", value = "角色id", required = true) @PathVariable Integer id) {
         return Result.ok(roleService.removeById(id));
+    }
+
+    @PostMapping("/grant")
+    @ApiOperation(value = "根据设置角色权限", notes = "根据id设置角色权限")
+    public Result grantMenu(@RequestBody RoleGrantMenuDTO roleGrantMenuDTO) {
+        return Result.ok(roleService.grant(roleGrantMenuDTO));
     }
 }
 

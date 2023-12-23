@@ -2,6 +2,7 @@ package com.kfm.shop.system.mapper;
 
 import com.kfm.shop.system.model.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.kfm.shop.system.model.dto.UserDTO;
 
 /**
 * @author Administrator
@@ -10,7 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity  com.kfm.comm.model.User
 */
 public interface UserMapper extends BaseMapper<User> {
-
+    UserDTO selectUserByIdWithRole(Integer id);
 }
 
 

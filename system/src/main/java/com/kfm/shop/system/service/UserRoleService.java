@@ -1,7 +1,6 @@
 package com.kfm.shop.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.kfm.shop.system.model.User;
 import com.kfm.shop.system.model.UserRole;
 
 /**
@@ -11,5 +10,4 @@ import com.kfm.shop.system.model.UserRole;
 */
 public interface UserRoleService extends IService<UserRole> {
 
-    boolean save(User entity);
 }

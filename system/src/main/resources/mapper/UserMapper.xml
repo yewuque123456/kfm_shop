@@ -5,24 +5,55 @@
 <mapper namespace="com.kfm.shop.system.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.kfm.shop.system.model.User">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="phone" column="phone" jdbcType="VARCHAR"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <resultMap id="ResultMapWithRole" type="com.kfm.shop.system.model.dto.UserDTO">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+
+        <collection property="roles" ofType="com.kfm.shop.system.model.dto.RoleDTO">
+            <id property="id" column="roleId" jdbcType="INTEGER"/>
+            <result property="name" column="roleName" jdbcType="VARCHAR"/>
+            <result property="roleCode" column="role_code" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        </collection>
     </resultMap>
 
+
     <sql id="Base_Column_List">
-        id,username,password,
+        id
+        ,username,password,
         phone,name,create_time,
         update_time
     </sql>
     <sql id="Base_Column_List_without_pass">
-        id,username,phone,
+        id
+        ,username,phone,
         email,last_login_addr,
         last_login_time,create_time,update_time,
         `state`
     </sql>
+
+    <select id="selectUserByIdWithRole" resultMap="ResultMapWithRole">
+        select
+            t1.id, t1.username, t1.phone, t1.name, t3.id roleId, t3.name roleName, t3.role_code
+        FROM
+            sys_user t1
+                INNER JOIN sys_user_role t2 ON t1.id = t2.user_id
+                INNER JOIN sys_role t3 ON t2.role_id = t3.id
+        WHERE
+            t1.id = #{id};
+    </select>
 </mapper>

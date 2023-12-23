@@ -1,7 +1,9 @@
 package com.kfm.shop.system.mapper;
 
-import com.kfm.shop.system.model.Menu;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.kfm.shop.system.model.Menu;
+
+import java.util.List;
 
 /**
 * @author Administrator
@@ -10,6 +12,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity  com.kfm.comm.model.Menu
 */
 public interface MenuMapper extends BaseMapper<Menu> {
+
+     List<Menu> selectMenusWithRoleIds( List<Integer> ids);
+
 
 }
 

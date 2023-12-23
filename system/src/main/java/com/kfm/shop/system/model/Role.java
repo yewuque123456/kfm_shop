@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.kfm.shop.comm.model.BaseModel;
 import lombok.Data;
-import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -16,7 +15,6 @@ import java.io.Serializable;
  */
 @TableName(value ="sys_role")
 @Data
-@ToString
 public class Role extends BaseModel implements Serializable {
     /**
      * 角色id

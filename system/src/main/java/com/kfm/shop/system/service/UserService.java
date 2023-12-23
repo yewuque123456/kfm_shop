@@ -9,5 +9,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-12-19 19:19:57
 */
 public interface UserService extends IService<User> {
-     User login(User user) throws Exception;
+
+     String login( User user);
 }

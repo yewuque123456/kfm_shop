@@ -1,9 +1,8 @@
 package com.kfm.shop.system.service;
 
-import com.kfm.shop.system.model.Role;
 import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
+import com.kfm.shop.system.model.Role;
+import com.kfm.shop.system.model.dto.RoleGrantMenuDTO;
 
 /**
 * @author Administrator
@@ -11,5 +10,5 @@ import java.util.List;
 * @createDate 2023-12-19 19:19:57
 */
 public interface RoleService extends IService<Role> {
-       List<Role> selectRoleByUserId(Integer userId);
+       boolean grant(RoleGrantMenuDTO roleGrantMenuDTO);
 }

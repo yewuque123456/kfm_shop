@@ -2,7 +2,6 @@ package com.kfm.shop.system.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kfm.shop.system.mapper.UserRoleMapper;
-import com.kfm.shop.system.model.User;
 import com.kfm.shop.system.model.UserRole;
 import com.kfm.shop.system.service.UserRoleService;
 import org.springframework.stereotype.Service;
@@ -15,10 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserRoleServiceImpl extends ServiceImpl<UserRoleMapper, UserRole>
     implements UserRoleService{
-    @Override
-    public boolean save(User entity) {
-        return false;
-    }
+
 }
 
 
