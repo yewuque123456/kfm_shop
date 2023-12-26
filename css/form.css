@@ -1,0 +1,56 @@
+/* 设备 */
+@media (max-width: 768px) {
+    .container{
+        background-color: aquamarine;
+    }
+}
+@media (max-width: 576px) {
+    .container{
+        background-color: aqua;
+    }
+}
+.container{
+    width: 100%;
+    min-width: 800px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
+
+.form{
+    width: 600px;
+    min-width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.form input{
+    outline: 1px solid #000;
+}
+.form .form__group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.form input[required] + label::before{
+    content: '*';
+    padding-left: 4px;
+    color: red;
+}
+.form input{
+    padding-left: 2px;
+}
+
+.form input:focus{
+    outline: 2px solid #07a6f6;
+}
+
+.form input + label {
+    color: red;
+}

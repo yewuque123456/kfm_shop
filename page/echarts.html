@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--   为Echarts 准备了一个定义狂傲的dom -->
+    <div id="main" style="width: 600px;height: 400px;"></div>
+    <div id="main1" style="width: 600px;height: 400px;"></div>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/macarons.js"></script>
+    <script>
+        var myChart = echarts.init(document.getElementById("main"),"macarons");
+        var myChart1 = echarts.init(document.getElementById("main"),"macarons");
+        const label = {
+            postion:"inside",
+            verticalAlign:"middle",
+            align:"center",
+            rotate:90,
+            show:true,
+            formatter:"{name| {a}} {c}",
+            fontSize:12,
+            rich: {
+                name:{},
+            },
+        };
+        //指定图表的配置和数据
+        var option = {
+            tilte:{
+                text: "Echarts 入门示例",
+            },
+            toolbox: {
+                show: true,
+                feature : {
+                    dateZoom :{
+                        yAxisIndex :"none" ,                  
+                },
+                dateView: {
+                    readOnly: false,
+                },
+                magicType : {
+                    type :["line","bar"],
+                },
+                restore:{},
+                saveAsImage:{},
+                },
+            },
+            tooltip: {
+                trigger :"axis",
+                axisPointer: {
+                    type:"shadow",
+                },
+                formatter: function(pt) {
+                    return `
+                    ${(pt[0].name)}<br />
+                    ${pt[0].maker} ${pt[0].seriesName}:${pt[0].value} 人<br />
+                    ${pt[1].maker} ${pt[1].seriesName}:${pt[1].value} 人<br />
+                    `;
+                },
+            },
+            legend: {
+          data: ["男生", "女生"],
+        },
+        xAxis: {
+          data: ["一班", "二班", "三班", "四班", "五班", "六班", "七班"],
+        },
+        yAxis: {},
+        series: [
+          {
+            name: "男生",
+            type: "bar",
+            stack: "total",
+            label,
+            data: [13, 5, 20, 36, 10, 10, 20],
+          },
+          {
+            name: "女生",
+            type: "bar",
+            stack: "total",
+            label,
+            data: [3, 7, 12, 26, 4, 12, 10],
+          },
+        ],
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+      myChart1.setOption(option);
+    </script>
+   </body>
+</html>

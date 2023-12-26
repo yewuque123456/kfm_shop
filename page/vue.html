@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <hr />
+        <button @click="num++">{{num}}</button>
+    </div>
+    <script src="../js/vue.global.js"></script>
+    <script>
+        const  config ={
+           data() {
+            return {
+                message: "Hello  Vue!",
+                num: 1
+            };
+           },
+           methods:{},
+        };
+        const app = VUe.createApp(config);
+        
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>
