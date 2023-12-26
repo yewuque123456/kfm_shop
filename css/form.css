@@ -54,4 +54,6 @@
 .form input + label {
     color: red;
     border: 1px solid;
+    border-radius: 2px;
+    font: optional;
 }
